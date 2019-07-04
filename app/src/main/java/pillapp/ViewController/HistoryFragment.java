@@ -37,21 +37,21 @@ public class HistoryFragment extends Fragment {
         TableRow tbrow0 = new TableRow(container.getContext());
 
         TextView tt1 = new TextView(container.getContext());
-        tt1.setText("Pill Name");
+        tt1.setText("Nama Obat");
         tt1.setTextColor(Color.WHITE);
         tt1.setGravity(Gravity.CENTER);
         tt1.setTypeface(null, Typeface.BOLD);
         tbrow0.addView(tt1);
 
         TextView tt2 = new TextView(container.getContext());
-        tt2.setText("Date Taken");
+        tt2.setText("Tanggal Minum");
         tt2.setTextColor(Color.WHITE);
         tt2.setGravity(Gravity.CENTER);
         tt2.setTypeface(null, Typeface.BOLD);
         tbrow0.addView(tt2);
 
         TextView tt3 = new TextView(container.getContext());
-        tt3.setText("Time Taken");
+        tt3.setText("Waktu Minum");
         tt3.setTextColor(Color.WHITE);
         tt3.setGravity(Gravity.CENTER);
         tt3.setTypeface(null, Typeface.BOLD);

@@ -66,7 +66,7 @@ public class EditActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Edit an Alarm");
+        getSupportActionBar().setTitle("Ubah Pengingat");
 
         // Set up the time string on the page
         timeLabel=(TextView)findViewById(R.id.reminder_time);
@@ -222,7 +222,7 @@ public class EditActivity extends ActionBarActivity {
                 }
                 /** Input form is not completely filled out */
                 if(checkBoxCounter == 0 || pill_name.length() == 0)
-                    Toast.makeText(getBaseContext(), "Please input a pill name or check at least one day!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Silahkan Masukkan Nama obat setidaknya 1", Toast.LENGTH_SHORT).show();
                 else { // Input form is completely filled out
                     for (long alarmID : tempIds) {
                         pillBox.deleteAlarm(getApplicationContext(), alarmID);
@@ -242,7 +242,7 @@ public class EditActivity extends ActionBarActivity {
                         e.printStackTrace();
                     }
 
-                    Toast.makeText(getBaseContext(), "Alarm for " + pill_name + " is set successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Pengingat Untuk " + pill_name + " Telah dibuat", Toast.LENGTH_SHORT).show();
                     Intent returnHome = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(returnHome);
                     finish();
@@ -363,7 +363,7 @@ public class EditActivity extends ActionBarActivity {
             startActivity(returnPillBox);
             finish();
 
-            Toast.makeText(getBaseContext(), "Alarm for " + tempPill_name + " is deleted successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Pengingat Untuk " + tempPill_name + " dihapus", Toast.LENGTH_SHORT).show();
             return true;
         }
         Intent returnHome = new Intent(getBaseContext(), PillBoxActivity.class);

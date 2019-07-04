@@ -46,7 +46,7 @@ public class PillBoxActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Pill Box");
+        getSupportActionBar().setTitle("Daftar Jadwal");
         setContentView(R.layout.activity_pill_box);
 
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
@@ -64,7 +64,7 @@ public class PillBoxActivity extends ActionBarActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Expanded",
+                        listDataHeader.get(groupPosition) + " dilebarkan",
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -73,7 +73,7 @@ public class PillBoxActivity extends ActionBarActivity {
             @Override
             public void onGroupCollapse(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Collapsed",
+                        listDataHeader.get(groupPosition) + " diciutkan",
                         Toast.LENGTH_SHORT).show();
             }
         });

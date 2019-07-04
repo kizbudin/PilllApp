@@ -20,13 +20,6 @@ import pillapp.Model.Alarm;
 import pillapp.Model.PillBox;
 
 import teamqitalach.pillapp.R;
-
-/**
- * This activity handles the view and controller of the week-at-a-glance page, where
- * the user can view the schedule of alarms for all 7 days. The logic is the same as
- * the logic in TodayFragment and TomorrowFragment.
- */
-
 public class ScheduleActivity extends ActionBarActivity {
 
     @Override
@@ -35,7 +28,7 @@ public class ScheduleActivity extends ActionBarActivity {
         setContentView(R.layout.activity_schedule);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Week at a Glance");
+        getSupportActionBar().setTitle("Rangkuman");
 
         TableLayout stk = (TableLayout) findViewById(R.id.table_calendar);
 
@@ -43,8 +36,8 @@ public class ScheduleActivity extends ActionBarActivity {
 
         List<Alarm> alarms = null;
 
-        List<String> days = Arrays.asList("Sunday", "Monday", "Tuesday",
-                "Wednesday", "Thursday", "Friday", "Saturday");
+        List<String> days = Arrays.asList("Minggu", "Senin", "Selasa",
+                "Rabu", "Kamis", "Jumat", "Sabtu");
 
         int color = getResources().getColor(R.color.blue600);
 
@@ -64,7 +57,7 @@ public class ScheduleActivity extends ActionBarActivity {
             headerRow.setBackgroundColor(color);
             stk.addView(headerRow);
 
-            //Let headerText span two columns
+
             TableRow.LayoutParams params = (TableRow.LayoutParams)headerText.getLayoutParams();
             params.span = 2;
             headerText.setLayoutParams(params);
@@ -98,7 +91,7 @@ public class ScheduleActivity extends ActionBarActivity {
                 TableRow tbrow = new TableRow(this);
                 TextView tv = new TextView(this);
                 tv.setGravity(Gravity.CENTER);
-                tv.setText("You don't have any alarms for " + day + ".");
+                tv.setText("Anda Tidak Mempunyai Pengingat Untuk Hari " + day + ".");
 
                 tbrow.addView(tv);
                 stk.addView(tbrow);
@@ -113,18 +106,12 @@ public class ScheduleActivity extends ActionBarActivity {
 
 
     @Override
-    /** Inflate the menu; this adds items to the action bar if it is present */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_schedule, menu);
         return true;
     }
 
     @Override
-    /**
-     * Handle action bar item clicks here. The action bar will
-     * automatically handle clicks on the Home/Up button, so long
-     * as you specify a parent activity in AndroidManifest.xml.
-     */
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent returnHome = new Intent(getBaseContext(), MainActivity.class);
         startActivity(returnHome);

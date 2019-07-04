@@ -85,7 +85,7 @@ public class TodayFragment extends Fragment {
             TableRow tbrow = new TableRow(container.getContext());
 
             TextView t1v = new TextView(container.getContext());
-            t1v.setText("You don't have any alarms for Today!");
+            t1v.setText("Anda Tidak Mempunyai Pengingat Untuk Hari ini!");
             t1v.setTextColor(Color.WHITE);
             t1v.setGravity(Gravity.CENTER);
             t1v.setPadding(30, 30, 30, 30);

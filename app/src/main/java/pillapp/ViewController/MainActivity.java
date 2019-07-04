@@ -22,14 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * This activity is based on the code at
- * http://www.feelzdroid.com/2014/10/android-action-bar-tabs-swipe-views.html
- *
- * This fragment handles the view and controller of the home screen
- * It allows the user to swipe between the today, tomorrow and history tabs
- * It also contains the action bar buttons to the add, schedule, and pill box pages
- */
+//Disini Adalah Source code untuk mengatur tampilan utama pada aplikasi
 
 public class MainActivity extends ActionBarActivity implements android.support.v7.app.ActionBar.TabListener{
     private ViewPager tabsviewPager;
@@ -46,7 +39,7 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
         tabsviewPager.setAdapter(mTabsAdapter);
 
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("Pills Reminder");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
@@ -72,14 +65,14 @@ public class MainActivity extends ActionBarActivity implements android.support.v
         historytab.setCustomView(tt1);
 
         TextView tt2 = new TextView(this);
-        tt2.setText(Html.fromHtml("<b>TODAY</b><br><small>" + todayString + "</small>"));
+        tt2.setText(Html.fromHtml("<b>HARI INI</b><br><small>" + todayString + "</small>"));
         tt2.setTextColor(Color.WHITE);
         tt2.setGravity(Gravity.CENTER);
         tt2.setHeight(200);
         todaytab.setCustomView(tt2);
 
         TextView tt3 = new TextView(this);
-        tt3.setText(Html.fromHtml("<b>TOMORROW</b><br><small>" + tomorrowString + "</small>"));
+        tt3.setText(Html.fromHtml("<b>BESOK</b><br><small>" + tomorrowString + "</small>"));
         tt3.setTextColor(Color.WHITE);
         tt3.setGravity(Gravity.CENTER);
         tt3.setHeight(200);
@@ -91,7 +84,7 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
         getSupportActionBar().setSelectedNavigationItem(1);
 
-        /** This helps in providing swiping effect for v7 compat library */
+
         tabsviewPager.setOnPageChangeListener(new OnPageChangeListener() {
 
             @Override
@@ -111,19 +104,13 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
 
     @Override
-    /** Inflate the menu; this adds items to the action bar if it is present */
-    public boolean onCreateOptionsMenu(Menu menu) {
+        public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    /**
-     * Handle action bar item clicks here. The action bar will
-     * automatically handle clicks on the Home/Up button, so long
-     * as you specify a parent activity in AndroidManifest.xml.
-     */
-    public boolean onOptionsItemSelected(MenuItem item) {
+        public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
@@ -150,7 +137,6 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
     @Override
     public void onTabSelected(Tab selectedtab, FragmentTransaction arg1) {
-        /** Update tab position on tap */
         tabsviewPager.setCurrentItem(selectedtab.getPosition());
     }
 

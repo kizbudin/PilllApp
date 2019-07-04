@@ -14,18 +14,6 @@ import java.util.Date;
 import pillapp.Model.History;
 import pillapp.Model.Pill;
 import pillapp.Model.PillBox;
-
-/**
- * Utilized the link below as a reference guide:
- * http://wptrafficanalyzer.in/blog/setting-up-alarm-using-alarmmanager-and-waking-up-screen-and-unlocking-keypad-on-alarm-goes-off-in-android/
- *
- * This activity handles the view and controller of the alert page, which contains
- * a dialog fragment AlertAlarm that shows the dialog box to let the user respond to an alarm.
- * This is the "notification" we are using right now. But it only contains a dialog box so it is
- * not a real notification. We can change this to a real notification that has a ringtone or a
- * vibrating function in the future.
- */
-
 public class AlertActivity extends FragmentActivity {
 
     private AlarmManager alarmManager;
